@@ -1,5 +1,6 @@
 package com.douglasbello.cursospringboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -18,7 +19,8 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String password;
-    @OneToMany(mappedBy = "client")
+    @JsonIgnore
+    @OneToMany(mappedBy = "client") // nome da chave estrangeira
     private List<Order> orders = new ArrayList<>();
 
     public User() {
