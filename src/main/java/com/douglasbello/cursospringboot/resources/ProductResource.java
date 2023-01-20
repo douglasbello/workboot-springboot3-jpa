@@ -1,7 +1,6 @@
 package com.douglasbello.cursospringboot.resources;
 
 import com.douglasbello.cursospringboot.entities.Product;
-import com.douglasbello.cursospringboot.entities.User;
 import com.douglasbello.cursospringboot.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
