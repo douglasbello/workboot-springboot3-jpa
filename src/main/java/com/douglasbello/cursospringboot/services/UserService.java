@@ -29,4 +29,21 @@ public class UserService {
     public void delete(Long id) {
         userRepository.deleteById(id);
     }
+
+    public User update(Long id,User obj) {
+        User entity = userRepository.getReferenceById(id); // ele retorna o obj com o id passado sem acessar o bd, ou
+        // seja, não efetua nenhuma operação com o bd.
+
+        updateData(entity,obj);
+
+        return userRepository.save(entity);
+
+    }
+
+    private void updateData(User entity, User obj) {
+        entity.setName(obj.getName());
+        entity.setEmail(obj.getEmail());
+        entity.setPhone(obj.getPhone());
+
+    }
 }
